@@ -16,6 +16,6 @@ jobs:
     steps:
       - uses: actions/chechout@v2
         with:
-          ref: master
+          path: master
       - run: npm install
       - run: npm run build
