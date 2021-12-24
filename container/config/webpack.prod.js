@@ -8,6 +8,7 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
+    publicPath: "/container/latest/", // if was deployed to AWS S3 bucket
   },
   plugins: [
     new ModuleFederationPlugin({
