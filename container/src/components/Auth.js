@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import { mount as authMount } from "auth/bootstrap";
 
-export default () => {
+export default ({ onSignIn }) => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -15,6 +15,7 @@ export default () => {
 
         if (pathname !== nextPathname) history.push(nextPathname);
       },
+      onSignIn,
     });
 
     history.listen(onParentNavigate);
