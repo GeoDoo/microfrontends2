@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-import { mount as marketingMount } from "marketing/bootstrap";
+import { mount as authMount } from "auth/bootstrap";
 
 export default () => {
   const ref = useRef(null);
   const history = useHistory();
 
   useEffect(() => {
-    const { onParentNavigate } = marketingMount(ref.current, {
+    const { onParentNavigate } = authMount(ref.current, {
       initialPath: history.location.pathname,
       onNavigate: ({ pathname: nextPathname }) => {
         const { pathname } = history.location;

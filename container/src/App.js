@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 import Marketing from "./components/Marketing";
+import Auth from "./components/Auth";
 import Header from "./components/Header";
 
 export default () => {
@@ -9,7 +10,10 @@ export default () => {
     <BrowserRouter>
       <div>
         <Header />
-        <Marketing />
+        <Switch>
+          <Route path="/auth" component={Auth} />
+          <Route path="/" component={Marketing} />
+        </Switch>
       </div>
     </BrowserRouter>
   );
